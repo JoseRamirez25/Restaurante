@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  	<title>Inicio de sesion</title>
+  	<link rel="stylesheet" type="text/css" href="CSS/Login1.css">
+  	<script src="../Clientes/JS/jquery-3.4.1.min.js" type="text/javascript"></script>
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  </head>
+  <!--Coded with love by Mutiullah Samim-->
+  <body onload="deshabilitaRetroceso()">
+  	<div class="container h-100">
+  		<div class="d-flex justify-content-center h-100">
+  			<div class="user_card">
+  				<div class="d-flex justify-content-center">
+  					<div class="brand_logo_container">
+  						<img src="CSS/Imagenes/logo.jpg" class="brand_logo" alt="Logo">
+  					</div>
+  				</div>
+  				<div class="d-flex justify-content-center form_container">
+  					<form id="formRegistro" action="PHP/Login.php" method="post">
+  						<div class="input-group mb-3">
+  							<div class="input-group-append">
+  								<span class="input-group-text"><i class="fas fa-user"></i></span>
+  							</div>
+  							<input id="un" type="text" name="userN" class="form-control user" autocomplete="off" placeholder="username">
+  						</div>
+  						<div class="input-group mb-2">
+  							<div class="input-group-append">
+  								<span class="input-group-text"><i class="fas fa-key"></i></span>
+  							</div>
+  							<input id="up" type="password" name="userP" class="form-control pass" autocomplete="off" placeholder="password">
+  						</div>
+  					</form>
+  				</div>
+  				<div class="d-flex justify-content-center mt-3 login_container">
+  					<button type="button" name="button" id="botonR" class="btn login_btn">Login</button>
+  				</div>
+  				<div class="mt-4">
+  					<div class="d-flex justify-content-center links">
+  						Nuevo admin? <a id="a1" href class="ml-2">Registrate!</a>
+  					</div>
+  				</div>
+  			</div>
+        <a class="inventario" href="Inventario.php" title="Acceder a inventario">I</a>
+        <a class="ventas" href="Ventas.php" title="Acceder a ventas">V</a>
+  		</div>
+  	</div>
+  </body>
+</html>
+<script>
+$(document).ready(function(){
+
+  $('.inventario').hide();
+  $('.ventas').hide();
+  $('#botonR').click(function(){
+    var datos = $('#formRegistro').serialize();
+    if ($('#up').val()=='' || $('#un').val()=='') {
+      alert("Debe ingresar los datos requeridos");
+    }
+    else {
+        $.ajax({
+          type:"POST",
+          url:"PHP/Login.php",
+          data:datos,
+        }).done(function(data){
+          if(data==1){
+            alert("Usuario encontrado");
+            $('.inventario').show();
+            $('.ventas').show();
+          }
+          else {
+            alert("Usuario o contrase\361a incorrectos");
+          }
+        });
+      }
+
+  })
+  $('#up').keypress(function(e){
+    if (e.keyCode === 13 && !e.shiftKey) {
+        e.preventDefault();
+        $('#botonR').click();
+    }
+  })
+  $('#a1').click(function(){
+    if ($('#un').val()==5) {
+      alert("hola :)")
+      $('#a1').attr('href', 'Registro.html')
+    }else {
+      alert("denegado :)");
+    }
+  })
+
+})
+function deshabilitaRetroceso(){
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button" //chrome
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+}
+
+</script>

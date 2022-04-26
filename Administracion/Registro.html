@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  	<title>Registro</title>
+  	<link rel="stylesheet" type="text/css" href="CSS/RegistroS.css">
+  	<script src="../Clientes/JS/jquery-3.4.1.min.js" type="text/javascript"></script>
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  </head>
+  <!--Coded with love by Mutiullah Samim-->
+  <body>
+  	<div class="container h-100">
+  		<div class="d-flex justify-content-center h-100">
+  			<div class="user_card">
+  				<div class="d-flex justify-content-center">
+  					<div class="brand_logo_container">
+  						<img src="CSS/Imagenes/logo.jpg" class="brand_logo" alt="Logo">
+  					</div>
+  				</div>
+  				<div class="d-flex justify-content-center form_container">
+  					<form id="formRegistro" method="post">
+  						<div class="input-group mb-2">
+  							<div class="input-group-append">
+  								<span class="input-group-text"><i class="fas fa-user"></i></span>
+  							</div>
+  							<input type="text" id="un" name="userN" class="form-control user" autocomplete="off" placeholder="username">
+  						</div>
+  						<div class="input-group mb-2">
+  							<div class="input-group-append">
+  								<span class="input-group-text"><i class="fas fa-key"></i></span>
+  							</div>
+  							<input type="password" id="up" name="userP" class="form-control pass" autocomplete="off" placeholder="password">
+  						</div>
+              <div class="input-group mb-2">
+  							<div class="input-group-append">
+  								<span class="input-group-text"><i class="fas fa-address-card"></i></span>
+  							</div>
+  							<input type="text" id="ud" name="userD" class="form-control doc" autocomplete="off" placeholder="documento">
+  						</div>
+              <div class="input-group mb-2">
+  							<div class="input-group-append">
+  								<span class="input-group-text"><i class="fas fa-at"></i></span>
+  							</div>
+  							<input type="email" id="ue" name="userE" class="form-control email" autocomplete="off" placeholder="correo electronico">
+  						</div>
+  					</form>
+  				</div>
+  				<div class="d-flex justify-content-center mt-3 login_container">
+  					<button type="button" name="button" id="botonR" class="btn login_btn">sing up</button>
+  				</div>
+  				<div class="mt-4">
+  					<div class="d-flex justify-content-center links">
+  						Ya estas registrado? <a href="javascript:window.history.back();" class="ml-2">inicia sesion!</a>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </body>
+</html>
+<script>
+$(document).ready(function(){
+
+  $('#botonR').click(function(){
+      var datos = $('#formRegistro').serialize();
+      if ($('#un').val()=='' || $('#up').val()=='' || $('#ud').val()=='' || $('#ue').val()=='') {
+        alert("Debe rellenar todos los campos para continuar");
+      }
+      else {
+        $.ajax({
+          type:"POST",
+          url:"PHP/Registro.php",
+          data:datos,
+        }).done(function(f){
+          if (f==1) {
+            alert("Administrador registrado con exito");
+            $(location).attr('href', 'javascript:window.history.back();');
+          }else {
+              alert(f);
+              $('#un').val("");
+              $('#up').val("");
+              $('#ud').val("");
+              $('#ue').val("");
+          }
+        });
+      }
+  })
+
+})
+</script>

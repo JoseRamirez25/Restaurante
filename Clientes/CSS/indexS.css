@@ -1,0 +1,303 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: cursive;
+}
+
+.material-icons.md-48 { font-size: 48px; }
+
+header{
+  background: #252932;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.total{
+  display: none;
+}
+
+.divs{
+  display: inline-block;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+  height: 30px;
+  width: 210px;
+  border-bottom:solid;
+  border-right: 1px solid;
+  transition: all 0.3s ease
+}
+
+.seg{
+  text-align: center;
+  border-radius: 5px;
+  margin-top: -400px;
+  margin-left: 500px;
+  width: 335px;
+  height: 395px;
+  border-style: solid;
+  border-color: black;
+  position: relative;
+}
+
+.accesosDirectos{
+  position: absolute;
+  color: #ffff;
+  background: #2E4053;
+  width: auto;
+  height: auto;
+  line-height: 20px;
+  top: 10px;
+  right: 20px;
+  border-radius: 5px;
+}
+
+#caja{
+  top: 60px;
+}
+
+.ingredientes{
+  text-align: left;
+  position: relative;
+  border-radius: 5px;
+  top: 25px;
+  left: 23px;
+  width: 280px;
+  height: 315px;
+  border-color: black;
+  border-style: solid;
+  background-color: #ffff;
+  overflow-y:scroll;
+}
+
+#btnguardar{
+  color: white;
+  font-weight: bold;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  background: red;
+  height: 30px;
+  top: -5px;
+  left: 115px;
+  width: 131px;
+  transition: all 0.5s ease;
+}
+
+.cn{
+  text-align: center;
+  color: black;
+  position: absolute;
+  display: inline-block;
+  font-size: 14px;
+  font-family: sans-serif;
+  border-left: 0px solid;
+  border-top: 0px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  background-color: white;
+  padding-left: 19px;
+  padding-top: 0px;
+  padding-right: 4px;
+  padding-bottom: 1px;
+  height: 44px;
+  width: 32px;
+  left: 205px;
+}
+
+.h3_1{
+  display: block;
+  position: relative;
+  top: 15px;
+  left: 50px;
+  width: 150px;
+}
+
+.h3_2{
+  border-left: 2px solid;
+  position: absolute;
+  display: inline-block;
+  top: 15px;
+  left: 229px;
+  width: 60px;
+}
+
+.secFactura{
+  text-align: center;
+  border-radius: 5px;
+  height: 360px;
+  width: 225px;
+  margin-top:15px;
+  margin-left: 15px;
+  border: solid;
+  background: #fff;
+  overflow-y:scroll;
+}
+
+#pb{
+  cursor: default;
+  font-size: 15px;
+  font-weight: bold;
+  background: rgba(0,0,1,0.2);
+  height:45px;
+  line-height:15px;
+  border-bottom:solid;
+}
+
+.perro{
+  position: absolute;
+  top: 0px;
+  border-style: ridge;
+  border-color: black;
+  border-radius: 5px;
+  height: 395px;
+  width: 455px;
+}
+
+.imgsec{
+  height: 400px;
+  width: 460px;
+  margin-top: 20px;
+  margin-left: 20px;
+  position: relative;
+  border-radius: 5px;
+}
+
+.sec{
+  height: 440px;
+  width: 860px;
+  border-radius: 5px;
+  margin-top:50px;
+  margin-right: 160px;
+  margin-left: 110px;
+  margin-bottom: 30px;
+  border: 1px solid;
+}
+
+.sec2{
+  border-radius: 5px;
+  height: 440px;
+  width: 260px;
+  margin-top:-472px;
+  margin-right: 160px;
+  margin-left: 990px;
+  margin-bottom: 30px;
+  border-color: black;
+  border:1px solid;
+  position: relative;
+}
+
+.vt{
+  color: black;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid;
+  top: 20px;
+  left: 20px;
+  height: 20px;
+  width: 80px;
+}
+
+.wrapper{
+  width: 90%;
+  max-width: 1000px;
+  overflow: hidden;
+  margin: auto;
+}
+
+nav a{
+  transition: all 0.3s ease
+}
+
+nav a:hover{
+  background-color:LightSeagreen;
+  transform: scale(0.9);
+}
+
+#btnguardar:hover{
+  transform: scale(0.95);
+}
+
+.logo{
+  position: relative;
+  top: 10px;
+  height: 50px;
+  color: #f2f2f2;
+  font-size: 50px;
+  text-decoration:none;
+  cursor: default;
+  font-family: fantasy;
+  float: left;
+}
+.logo a{
+  color: black;
+}
+
+header nav{
+  float: right;
+  line-height: 100px;
+  font-family: monospace;
+}
+
+header nav a{
+  border-radius: 10px;
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;;
+  padding: 10px 20px;
+  line-height: normal;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.Dog-out, .Ings-out{
+  color: black;
+  text-align: center;
+  display: inline-block;
+  padding: 15px 15px 15px 30px;
+  font-size: 14px;
+  height: 15px;
+  width: 215px;
+  font-family: sans-serif;
+  border-bottom: 1px solid;
+  transition: all 0.3s ease
+}
+
+label{
+  color: black;
+  display: inline-block;
+  padding: 15px 15px 15px 30px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 15px;
+  width: 158px;
+  font-family: sans-serif;
+  border-bottom: 1px solid;
+  border-right: 2px solid;
+  transition: all 0.3s ease
+}
+
+label:hover{
+  background: rgba(0,0,1,0.2);
+}
+
+label::before{
+  content: "";
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  background: none;
+  border: 3px solid black;
+  border-radius: 50px;
+  position: relative;
+  right: 13px;
+}
+
+input[type="checkbox"]:checked + label:before{
+    background: black;
+}
